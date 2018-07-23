@@ -10,22 +10,23 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
-
 elixir(function(mix) {
-    mix.sass('app.scss').style([
+    mix.sass('app.scss').styles([
         'libs/blog-post.css',
         'libs/bootstrap.css',
         'libs/font-awesome.css',
         'libs/metisMenu.css',
         'libs/sb-admin-2.css'
 
-    ],'./public/css/lib.css')
+    ],'./public/css/libs.css')
 
-        .script([
+        .scripts([
             'libs/jquery.js',
             'libs/bootstrap.js',
             'libs/metisMenu.js',
             'libs/sb-admin-2.js',
-            'libs/script.js'
-        ],'./public/js/lib.js');
+            'libs/scripts.js'
+        ],'./public/js/libs.js');
 });
+
+
