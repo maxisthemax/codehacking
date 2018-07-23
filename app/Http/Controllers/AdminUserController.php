@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +17,8 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        return View('admin.users.index');
+        $users = User::all();
+        return View('admin.users.index',compact('users'));
     }
 
     /**
