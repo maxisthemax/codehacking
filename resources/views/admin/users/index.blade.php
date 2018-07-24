@@ -7,6 +7,8 @@
               <th>Id</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
               <th>Updated At</th>
               <th>Create At</th>
           </tr>
@@ -18,8 +20,10 @@
                 <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->update_at}}</td>
-                <td>{{$user->created_at}}</td>
+                <td>{{$user->role->name}}</td>
+                <td>{{$user->is_active == 1?'Active':'Not Active'}}</td>
+                <td>{{$user->updated_at->diffForHumans()}}</td>
+                <td>{{$user->created_at->diffForHumans()}}</td>
             </tr>
             @endforeach
         @endif
