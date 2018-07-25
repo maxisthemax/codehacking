@@ -22,8 +22,8 @@
             {!! Form::select('is_active', ['1' => 'Active', '0' => 'Non-Active'], 0, ['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::Label('file','File') !!}
-            {!! Form::file('file',null,['class'=>'form-control']) !!}
+            {!! Form::Label('photo_id','File') !!}
+            {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::Label('password','Password') !!}
