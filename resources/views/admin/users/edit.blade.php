@@ -1,0 +1,37 @@
+@extends('layouts.admin')
+@section('content')
+
+    <h1>Edit Users</h1>
+    @include('includes.form_error')
+    <div class="form-group">
+        {!! Form::model($user,['method' => 'Patch','action'=>['AdminUserController@update',$user->id],'files'=>true]) !!}
+        <div class="form-group">
+            {!! Form::Label('name','Name') !!}
+            {!! Form::text('name',null,['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::Label('email','Email') !!}
+            {!! Form::text('email',null,['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::Label('role_id','Role') !!}
+            {!! Form::select('role_id', $roles, 0, ['placeholder'=>'Choose A Role','class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::Label('is_active','Status') !!}
+            {!! Form::select('is_active', ['1' => 'Active', '0' => 'Non-Active'], 0, ['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::Label('photo_id','File') !!}
+            {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::Label('password','Password') !!}
+            {!! Form::text('password','',['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::submit('Create User',['class'=>'btn btn-primary']) !!}
+        </div>
+        {!! Form::close() !!}
+    </div>
+@endsection
