@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
             {!! Form::Label('category_id','Category') !!}
-            {!! Form::select('category_id',['' => 'Select A Category ...','1'=>'PHP','2'=>'JS'], '', ['class'=>'form-control']) !!}
+            {!! Form::select('category_id',['' => 'Select A Category ...']+$categories, '', ['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::Label('photo_id','Photo') !!}
